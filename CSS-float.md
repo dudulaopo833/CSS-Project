@@ -13,7 +13,7 @@
   >> .clearfix:after{content:""; display: table; clear: both;} --> IE8 +     
   >> .clearfix{*zoom:1} --> IE6/7     
 * 最好是应用在流体布局中，不要砌砖头 --> TBC 
-> 效果一： 一个父元素，包含一个图片和其他都是文字的div或者p(display：block)，其中图片有float样式，那么图片后面的其他文字的div/p就会环绕图片排列   
+> 效果一： 一个父元素，包含一个图片和其他都是文字的div或者p(display：block)，其中图片有float样式，那么图片后面的其他文字的div/p就会环绕图片排列       
 > 效果二： 一个父元素，有两个图片div，再说一个文字div，两个图片的float分别是left和right，文字的text-align是center，那么就实现了左右图片，中间文字效果。 图片一定要在文字之前，要不然文字后面的图片都是换行显示了
 ```
 <div class="test-box">
