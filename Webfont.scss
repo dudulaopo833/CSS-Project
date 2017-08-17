@@ -1,3 +1,11 @@
 @font-face {    font-family: "UniversNextforHSBCW02";    font-style: normal;    font-weight: bold;    src: url("./fonts/UniversNextforHSBCW02-Bd.woff");}@font-face {    font-family: "UniversNextforHSBCW02";    font-style: normal;    font-weight: normal;    src: url("./fonts/UniversNextforHSBCW02-Rg.woff");}@font-face {    font-family: "UniversNextforHSBCW02";    font-style: normal;    font-weight: 300;    src: url("./fonts/UniversNextforHSBCW02-Lt.woff");}@font-face {    font-family: "UniversNextforHSBCW02";    font-style: normal;    font-weight: 100;    src: url("./fonts/UniversNextforHSBCW02-Th.woff");}@font-face {    font-family: "HSBCIcon-Font";    font-style: normal;    font-weight: normal;    src: url("./fonts/HSBCIcon-Font.eot");    src: url("./fonts/HSBCIcon-Font.eot?#iefix") format("embedded-opentype");    src: url("./fonts/HSBCIcon-Font.woff") format("woff");    src: url("./fonts/HSBCIcon-Font.ttf") format("truetype");}
 
-@font-face{//Need to write to gitHub experience font-family: "Icon-Font"; src: url('../font/icon/HSBCIcon-Font.eot');/*IE9 Compat Model*/ src: url('../font/icon/HSBCIcon-Font.eot?#iefix') format('embedded-opentype'),/*IE6-IE8*/ url('../font/icon/HSBCIcon-Font.woff') format('woff'),/* Modern Browsers */ url('../font/icon/HSBCIcon-Font.ttf') format('truetype'), /* Safari, Android, iOS */ url('../font/icon/HSBCIcon-Font.svg') format('svg');/* Legacy iOS */ } 
+@font-face{font-family: "Icon-Font"; src: url('../font/icon/HSBCIcon-Font.eot');/*IE9 Compat Model*/ src: url('../font/icon/HSBCIcon-Font.eot?#iefix') format('embedded-opentype'),/*IE6-IE8*/ url('../font/icon/HSBCIcon-Font.woff') format('woff'),/* Modern Browsers */ url('../font/icon/HSBCIcon-Font.ttf') format('truetype'), /* Safari, Android, iOS */ url('../font/icon/HSBCIcon-Font.svg') format('svg');/* Legacy iOS */ } 
+
+/* Font icon default style */.icon {    border: none;    display: inline-block;    font-family: "HSBCIcon-Font";    font-smoothing: antialiased;    font-style: normal;    font-weight: normal;    line-height: 1;    text-align: center;    text-decoration: inherit;    text-transform: none;    vertical-align: middle;    background-color: transparent;    speak: none;    text-rendering: auto;}
+
+/* Embed font icon style */.accounts::before {    content: "\f021";}.add::before {    content: "\f031";}.agree::before {    content: "\f00a";}.alert::before {    content: "\f017";}.anchor-down::before {    content: "\f075";}
+
+/*Example usage*/
+.ff{ font-family: "Icon-Font"; font-size: 14px;}
+/*<span class='icon agree ff'></span>*/
