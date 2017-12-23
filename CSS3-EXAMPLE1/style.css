@@ -45,6 +45,7 @@ a {
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.8),-2px -2px 1px rgba(0, 0, 0, 0.3),-3px -3px 1px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 22px;
+    position: relative; /*使得圆圈相对于a对齐，而不是跟li对齐*/
 }
 
 li:first-child{
@@ -72,7 +73,8 @@ a::after {
     border: 3px solid #fff;
     border-radius: 50%;
     position: absolute;
-    top: -60px;
+    top: -140px;
+    left: 17px;
     z-index: 3;
 }
 
@@ -96,20 +98,21 @@ li:last-of-type a::after{
 a::before {
     content: "";
     background: rgba(0, 0, 0, 0.3);
-    z-index: 4;
     display: block;
     width: 120px;
     height: 120px;
     border: 3px solid #fff;
     border-radius: 50%;
     position: absolute;
-    top: -60px;
+    top: -140px;
+    left: 17px;
+    z-index: 4;
 }
-
 a:hover::before {
     background: rgba(0, 0, 0, 0);
 }
 
+/*设置没有点击的在后面，这样就简单实现了点击出现相应图片*/
 img:not(:target) {
     z-index: -1;
 }
