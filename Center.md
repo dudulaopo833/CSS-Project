@@ -11,8 +11,8 @@
   color:#fff;
   border-radius: 5px;
   position:absolute; /*absolute position*/
-  top:50%; /*make top and left 50%*/
-  left:50%; /*make top and left 50%*/
-  transform: translate(-50%,-50%); /*make element translate 50%, only itselft translate*/
+  top:50%; /*make top and left 50% of the parent*/
+  left:50%; /*make top and left 50% of the parent*/
+  transform: translate(-50%,-50%); /*make element translate 50% of itself*/
 }
 ```
