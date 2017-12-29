@@ -8,8 +8,9 @@ img.bg {
     width: 100%;
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    z-index: -1;
+    /*不能用translate居中，这样动画效果就一半*/
 }
 
 /* 显示介绍在最前面，并且居中*/
@@ -65,7 +66,8 @@ li:last-child{
 }
 
 /*利用伪元素设置缩略图*/
-a::after {
+a::after,
+a::before {
     content: "";
     display: block;
     width: 120px;
@@ -96,16 +98,7 @@ li:last-of-type a::after{
 
 /*利用before伪元素加蒙层*/
 a::before {
-    content: "";
     background: rgba(0, 0, 0, 0.3);
-    display: block;
-    width: 120px;
-    height: 120px;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: -140px;
-    left: 17px;
     z-index: 4;
 }
 a:hover::before {
@@ -114,5 +107,87 @@ a:hover::before {
 
 /*设置没有点击的在后面，这样就简单实现了点击出现相应图片*/
 img:not(:target) {
-    z-index: -1;
+    /*z-index: 0;*/
+    animation: noTarget 6s ease 0s 1; /*duration must be longer than the other animation, if not will always show the last image*/
 }
+
+/*动画效果*/
+@keyframes rotate{
+    0%{
+        transform: rotate(-360deg) scale(0.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1.0);
+    }
+}
+
+@keyframes zoomIn {
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
+
+@keyframes zoomOut {
+    0%{
+        transform: scale(2.0);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideBottom{
+    0%{
+         transform: translateY(-100%);
+    }
+    100%{
+        bottom: translateY(0);
+    }
+}
+
+@keyframes noTarget{
+    0%{
+        z-index: 0;
+    }
+    100%{
+        z-index: 0;
+    }
+}
+
+#bg1:target{
+    z-index:1;
+    animation: rotate 5s ease-in 0s 1;
+}
+
+#bg2:target{
+    z-index:1;
+    animation: zoomIn 5s ease-out 0s 1;
+}
+
+#bg3:target{
+    z-index:1;
+    animation: zoomOut 5s ease 0s 1;
+}
+
+#bg4:target{
+    z-index:1;
+    animation: slideLeft 5s linear 0s 1;
+}
+
+#bg5:target{
+    z-index:1;
+    animation: slideBottom 5s ease-in-out 0s 1;
+}
+
