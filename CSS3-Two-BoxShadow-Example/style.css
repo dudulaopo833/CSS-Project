@@ -1,0 +1,87 @@
+
+/*-----------------------------曲边阴影---------------------------------*/
+.qubian-shadow-box {
+    width: 70%;
+    height: 200px;
+    margin: 30px auto;
+    background: #fff;
+}
+
+.qubian-shadow-box>h3 {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.qubian-shadow-effect {
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1) inset, 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.qubian-shadow-effect::after,
+.qubian-shadow-effect::before{ /*图形重叠做背景, absolute定位且指定四个位置， 就固定了大小了*/
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    bottom: 0;
+    left: 10px;
+    border-radius: 100px/10px; /*horizatal is 100px, vertical is 10px*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+/*-----------------------------翘边阴影---------------------------------*/
+.qiaobian-shadow-box {
+    text-align: center;
+}
+ul {
+    list-style: none;
+    /*flex布局， 居中*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+ul>li {
+    height: 165px;
+    margin: 0 20px;
+    padding: 2px;
+    border: 2px solid #efefef;
+    background: #ffffff; /*设置背景颜色，要不然li即使透明，也会透出来*/
+}
+
+.qiaobian-shadow-effect>li {
+    position: relative;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+/*图形重叠做背景, skew和rotate变换, 透明背景*/
+.qiaobian-shadow-effect>li::before {
+    content: "";
+    position: absolute;
+    width: 91%;
+    height: 80%;
+    bottom: 6px;
+    left: 8px;
+    background: transparent;
+    transform: skewX(12deg) rotate(4deg);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.qiaobian-shadow-effect>li::after {
+    content: "";
+    position: absolute;
+    width: 91%;
+    height: 80%;
+    bottom: 6px;
+    left: 12px;
+    background: transparent;
+    transform: skewX(-12deg) rotate(-4deg);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+
