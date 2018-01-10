@@ -1,0 +1,76 @@
+.container {
+    width: 80%;
+    height: 90%;
+    margin: 10% auto;
+    position: relative;
+}
+
+.container li {
+    list-style: none;
+    position: absolute;
+    width: 220px;
+    height: 230px;
+    border: solid 1px rgb(155, 154, 154);
+    background-color: #ededed;
+}
+
+li>img {
+    margin: 10px 10px 20px;
+}
+
+ul>li:hover{
+    transform: scale(1.2) rotate(0deg);
+    transition: 1s;
+    z-index: 1;
+}
+
+.img1 {
+    left: 10px;
+    top: 0;
+    transform: rotate(5deg);
+}
+.img2 {
+    left: 300px;
+    top: 20px;
+    transform: rotate(-15deg);
+}
+.img3 {
+    left: 30px;
+    top: 200px;
+    transform: rotate(25deg);
+}
+.img4 {
+    left: 60px;
+    top: 400px;
+    transform: rotate(-35deg);
+}
+.img5 {
+    left: 500px;
+    top: 50px;
+    transform: rotate(10deg);
+}
+.img6 {
+    left: 650px;
+    top: 250px;
+    transform: rotate(50deg);
+}
+.img7 {
+    left: 300px;
+    top: 380px;
+    transform: rotate(-45deg);
+}
+.img8 {
+    left: 520px;
+    top: 420px;
+    transform: rotate(-30deg);
+}
+.img9 {
+    left: 180px;
+    top: 200px;
+    transform: rotate(40deg);
+}
+.img10 {
+    left: 400px;
+    top: 200px;
+    transform: rotate(25deg);
+}
